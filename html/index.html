@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/all.css">
+    <link rel="stylesheet" href="../css/vanilla-dataTables.min.css">
+    <title>Repeat Coder</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light p-4">
+        <div class="container-fluid">
+            <a class="navbar-brand pr-4" href="#"><span class="h2">Repe<span class="text-danger">at Coder</span></span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link active pl-3" aria-current="page" href="https://atcoder.jp/"><span class="h6">AtCoder</span></a>
+                    <a class="nav-link pl-3" href="https://kenkoooo.com/atcoder/#/table/"><span class="h6">AtCoder Problems</span></a>
+                    <a class="nav-link pl-3" href="https://onlinejudge.u-aizu.ac.jp/home"><span class="h6">AOJ</span></a>
+                    <a class="nav-link pl-3" href="https://algo-method.com/"><span class="h6">アルゴ式</span></a>
+                </div>
+          </div>
+        </div>
+    </nav>
+    <!-- Content -->
+    <div class="container py-5 bg-">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-10">
+                <!-- Table -->
+                <div class="table-responsive">
+                    <table id="problem-table" class="table table-bordered">
+                        <thead class="thead-light">
+                            <tr>
+                                <th id="th-contest" class="text-center align-middle">Contest</th>
+                                <th id="th-title" class="text-center align-middle">Title</th>
+                                <th id="th-date" class="text-center align-middle">Date</th>
+                                <th id="th-delete" class="text-center align-middle"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Problems -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="../lib/vanilla-dataTables.min.js"></script>
+    <script type="text/javascript" src="../lib/jquery-3.6.3.min.js"></script>
+    <script type="text/javascript" src="../lib/bootstrap.bundle.js"></script>
+    <script type="text/javascript" src="../js/index.js"></script>
+</body>
+</html>

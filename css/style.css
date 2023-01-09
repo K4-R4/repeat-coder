@@ -1,0 +1,19 @@
+#th-contest{
+    width: 25%;
+}
+
+#th-title{
+    width: 45%;
+}
+
+#th-date{
+    width: 20%;
+}
+
+#th-delete{
+    width: 10%;
+}
+
+td{
+    height: 4rem;
+}
