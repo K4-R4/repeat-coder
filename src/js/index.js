@@ -40,30 +40,30 @@ window.addEventListener("DOMContentLoaded", async () => {
             {select: 3, sortable: false}
         ]
     });
-});
 
+    // ボタンによって項目を削除
+    const tbl = document.querySelector("table");
+    tbl.addEventListener("click", async (event) => {
+        const button = event.target.closest("button");
+        if(!button) return;
 
-// ボタンによって項目を削除
-const tbl = document.querySelector("table");
-tbl.addEventListener("click", async (event) => {
-    const button = event.target.closest("button");
-    if(!button) return;
+        const tr = button.closest("tr");
+        const contest = tr.cells[0].getAttribute("data-contest");
+        const url = tr.cells[0].firstElementChild.href
 
-    const tr = button.closest("tr");
-    const contest = tr.cells[0].getAttribute("data-contest");
-    const url = tr.cells[0].firstElementChild.href
+        const item = await chrome.storage.sync.get(contest);
+        const problemsInContest = Object.keys(item[contest]).length;
+        if(problemsInContest <= 1) {
+            // コンテストが削除対象の問題だけ含んでいるならコンテスト自体を削除
+            await chrome.storage.sync.remove(contest);
+        } else {
+            // 問題を削除
+            delete item[contest][url];
+            await chrome.storage.sync.set(item);
+        }
 
-    const item = await chrome.storage.sync.get(contest);
-    const problemsInContest = Object.keys(item[contest]).length;
-    if(problemsInContest <= 1) {
-        // コンテストが削除対象の問題だけ含んでいるならコンテスト自体を削除
-        await chrome.storage.sync.remove(contest);
-    } else {
-        // 問題を削除
-        delete item[contest][url];
-        await chrome.storage.sync.set(item);
-    }
-
-    const rowIndex = tr.rowIndex;
-    tbl.deleteRow(rowIndex);
+        const rowIndex = tr.rowIndex;
+        tbl.deleteRow(rowIndex);
+        dataTable.rows().remove(rowIndex - 1);
+    });
 });

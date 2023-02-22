@@ -1,24 +1,24 @@
-table{
+table {
     table-layout: fixed;
 }
 
-#th-problem{
+#th-problem {
     width: 30%;
 }
 
-#th-note{
+#th-note {
     width: 45%;
 }
 
-#th-date{
+#th-date {
     width: 15%;
 }
 
-#th-delete{
+#th-delete {
     width: 10%;
 }
 
-td{
+td {
     height: 4rem;
     overflow: hidden;
     text-overflow: ellipsis;
