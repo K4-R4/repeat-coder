@@ -29,8 +29,8 @@ window.addEventListener("DOMContentLoaded", async () => {
             noRows: "No entries to found",
         },
         layout: {
-            top: "{select}{pager}",
-            bottom: ""
+            top: "{select}{search}",
+            bottom: "{pager}"
         },
         columns: [
             {select: 3, sortable: false}

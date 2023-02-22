@@ -4,11 +4,11 @@
     "version": "1.0.0",
     "description": "Repeat repeat repeat.",
     "background": {
-        "service_worker": "./js/background.js"
+        "service_worker": "./src/js/background.js"
     },
     "content_scripts": [{
       "matches": ["https://atcoder.jp/contests/*/tasks/*"],
-        "js": ["./js/content-script.js"]
+        "js": ["./src/js/content-script.js"]
     }],
     "permissions": [
         "storage",
