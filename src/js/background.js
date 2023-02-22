@@ -1,6 +1,3 @@
-'use strict'
-
-
 chrome.runtime.onInstalled.addListener((reason) => {
     if (reason === chrome.runtime.OnInstalledReason.INSTALL) {
       chrome.tabs.create({
@@ -10,6 +7,6 @@ chrome.runtime.onInstalled.addListener((reason) => {
   });
 
 
-chrome.action.onClicked.addListener((tab) => {
+chrome.action.onClicked.addListener(() => {
     chrome.tabs.create({"url": "./src/html/index.html" });
   });
