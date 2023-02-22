@@ -12,9 +12,9 @@ window.addEventListener("DOMContentLoaded", async () => {
     for (let [contest, problem] of Object.entries(items)) {
         for(let [url, detail] of Object.entries(problem)) {
             const html =
-                `<tr>
-                    <td class="pl-3 align-middle" data-contest="${contest}"><a href="${url}">${detail["title"]}</a></td>
-                    <td class="pl-3" contenteditable="true"></td>
+                `<tr data-contest="${contest}" data-url="${url}">
+                    <td class="problem pl-3 align-middle"><a href="${url}">${detail["title"]}</a></td>
+                    <td class="note pl-3" contenteditable="true">${detail["note"]}</td>
                     <td class="pl-3 align-middle">${detail["savedAt"]}</td>
                     <td class="text-center align-middle">${removeBtn}</td>
                 </tr>`
@@ -48,8 +48,8 @@ window.addEventListener("DOMContentLoaded", async () => {
         if(!button) return;
 
         const tr = button.closest("tr");
-        const contest = tr.cells[0].getAttribute("data-contest");
-        const url = tr.cells[0].firstElementChild.href
+        const contest = tr.getAttribute("data-contest");
+        const url = tr.getAttribute("data-url");
 
         const item = await chrome.storage.sync.get(contest);
         const problemsInContest = Object.keys(item[contest]).length;
@@ -64,5 +64,21 @@ window.addEventListener("DOMContentLoaded", async () => {
 
         const rowIndex = tr.rowIndex;
         dataTable.rows().remove(rowIndex - 1);
+    });
+
+    // noteの内容を保存
+    const notes = document.querySelectorAll(".note");
+    notes.forEach(note => {
+        note.addEventListener("input", async () => {
+            const tr = note.closest("tr");
+            const contest = tr.getAttribute("data-contest");
+            const url = tr.getAttribute("data-url");
+            const content = note.innerHTML;
+
+            let item = await chrome.storage.sync.get(contest);
+            item[contest][url]["note"] = content;
+            // console.log(item[contest][url]);
+            await chrome.storage.sync.set(item);
+        });
     });
 });
