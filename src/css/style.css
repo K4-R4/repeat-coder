@@ -1,13 +1,17 @@
-#th-contest{
-    width: 25%;
+table{
+    table-layout: fixed;
 }
 
 #th-problem{
+    width: 30%;
+}
+
+#th-note{
     width: 45%;
 }
 
 #th-date{
-    width: 20%;
+    width: 15%;
 }
 
 #th-delete{
@@ -16,4 +20,7 @@
 
 td{
     height: 4rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }

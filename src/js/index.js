@@ -14,6 +14,7 @@ window.addEventListener("DOMContentLoaded", async () => {
             const html =
                 `<tr>
                     <td class="pl-3 align-middle" data-contest="${contest}"><a href="${url}">${detail["title"]}</a></td>
+                    <td class="pl-3 align-middle" contenteditable="true"></td>
                     <td class="pl-3 align-middle">${detail["savedAt"]}</td>
                     <td class="text-center align-middle">${removeBtn}</td>
                 </tr>`
@@ -35,7 +36,7 @@ window.addEventListener("DOMContentLoaded", async () => {
             bottom: "{pager}"
         },
         columns: [
-            {select: 2, sortable: false}
+            {select: 3, sortable: false}
         ]
     });
 });
