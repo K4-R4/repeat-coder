@@ -18,7 +18,7 @@ table {
     width: 10%;
 }
 
-td {
+.ellipsis {
     height: 4rem;
     overflow: hidden;
     text-overflow: ellipsis;

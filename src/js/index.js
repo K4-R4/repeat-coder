@@ -13,9 +13,9 @@ window.addEventListener("DOMContentLoaded", async () => {
         for(let [url, detail] of Object.entries(problem)) {
             const html =
                 `<tr data-contest="${contest}" data-url="${url}">
-                    <td class="problem pl-3 align-middle"><a href="${url}">${detail["title"]}</a></td>
-                    <td class="note pl-3" contenteditable="true">${detail["note"]}</td>
-                    <td class="pl-3 align-middle">${detail["savedAt"]}</td>
+                    <td class="ellipsis pl-3 align-middle"><a href="${url}">${detail["title"]}</a></td>
+                    <td class="note ellipsis pl-3" contenteditable="true">${detail["note"]}</td>
+                    <td class="pl-3 ellipsis align-middle">${detail["savedAt"]}</td>
                     <td class="text-center align-middle">${removeBtn}</td>
                 </tr>`
 
