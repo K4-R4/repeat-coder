@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,21 +10,27 @@
     <link rel="stylesheet" href="../css/vanilla-dataTables.min.css">
     <title>Repeat Coder</title>
 </head>
+
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light p-4">
         <div class="container-fluid">
-            <a class="navbar-brand pr-4" href="#"><span class="h2">Repe<span class="text-danger">at Coder</span></span></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand pr-4" href="#"><span class="h2">Repe<span class="text-danger">at
+                        Coder</span></span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link active pl-3" aria-current="page" href="https://atcoder.jp/"><span class="h6">AtCoder</span></a>
-                    <a class="nav-link pl-3" href="https://kenkoooo.com/atcoder/#/table/"><span class="h6">AtCoder Problems</span></a>
-                    <a class="nav-link pl-3" href="https://onlinejudge.u-aizu.ac.jp/home"><span class="h6">AOJ</span></a>
+                    <a class="nav-link active pl-3" aria-current="page" href="https://atcoder.jp/"><span
+                            class="h6">AtCoder</span></a>
+                    <a class="nav-link pl-3" href="https://kenkoooo.com/atcoder/#/table/"><span class="h6">AtCoder
+                            Problems</span></a>
+                    <a class="nav-link pl-3" href="https://onlinejudge.u-aizu.ac.jp/home"><span
+                            class="h6">AOJ</span></a>
                     <a class="nav-link pl-3" href="https://algo-method.com/"><span class="h6">アルゴ式</span></a>
                 </div>
-          </div>
+            </div>
         </div>
     </nav>
     <!-- Content -->
@@ -49,9 +56,26 @@
             </div>
         </div>
     </div>
+    <!-- Modal -->
+    <div class="modal" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h6 class="modal-title" id="confirmationModalLabel">Connfirm Deletion</h6>
+                    <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body"><h6></h6></div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button id="confirmationBtn" class="btn btn-danger" data-row-index="" data-contest="" data-url="" data-bs-dismiss="modal">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <script type="text/javascript" src="../lib/vanilla-dataTables.min.js"></script>
     <script type="text/javascript" src="../lib/jquery-3.6.3.min.js"></script>
     <script type="text/javascript" src="../lib/bootstrap.bundle.js"></script>
     <script type="text/javascript" src="../js/index.js"></script>
 </body>
+
 </html>

@@ -31,9 +31,9 @@ sabeBtn.addEventListener("click", async () => {
 
     // コンテスト単位で問題を保存
     const item = await chrome.storage.sync.get(detail["contest"]);
-    if(item[detail["contest"]] == null) {
+    if (item[detail["contest"]] == null) {
         // 1.コンテスト自体が保存されていない場合は新たに作成
-        chrome.storage.sync.set({[detail["contest"]]: {[detail["url"]]: problem}});
+        chrome.storage.sync.set({ [detail["contest"]]: { [detail["url"]]: problem } });
     } else {
         // 2.コンテストがすでに保存されているなら追記
         item[detail["contest"]][detail["url"]] = problem;
@@ -51,7 +51,7 @@ function getProblemDetail() {
     const today = new Date();
     const savedAt = today.getFullYear() + "/" + (today.getMonth() + 1) + "/" + today.getDate();
 
-    return {url: url, contest: contest, title: title, savedAt: savedAt};
+    return { url: url, contest: contest, title: title, savedAt: savedAt };
 }
 
 // todo 保存タブを押したあとのビジュアル変化
