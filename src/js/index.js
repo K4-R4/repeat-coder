@@ -14,7 +14,7 @@ window.addEventListener("DOMContentLoaded", async () => {
             const html =
                 `<tr>
                     <td class="pl-3 align-middle" data-contest="${contest}"><a href="${url}">${detail["title"]}</a></td>
-                    <td class="pl-3 align-middle" contenteditable="true"></td>
+                    <td class="pl-3" contenteditable="true"></td>
                     <td class="pl-3 align-middle">${detail["savedAt"]}</td>
                     <td class="text-center align-middle">${removeBtn}</td>
                 </tr>`
@@ -25,6 +25,7 @@ window.addEventListener("DOMContentLoaded", async () => {
 
     // テーブルをソート
     const dataTable = new DataTable("#problem-table", {
+        perPage: 25,
         fixedHeight: true,
         labels: {
             placeholder: "Search",
@@ -32,8 +33,8 @@ window.addEventListener("DOMContentLoaded", async () => {
             noRows: "No entries to found",
         },
         layout: {
-            top: "{select}{search}",
-            bottom: "{pager}"
+            top: "{pager}{search}",
+            bottom: ""
         },
         columns: [
             {select: 3, sortable: false}
@@ -65,4 +66,4 @@ tbl.addEventListener("click", async (event) => {
 
     const rowIndex = tr.rowIndex;
     tbl.deleteRow(rowIndex);
-})
+});
