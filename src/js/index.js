@@ -63,7 +63,6 @@ window.addEventListener("DOMContentLoaded", async () => {
         }
 
         const rowIndex = tr.rowIndex;
-        tbl.deleteRow(rowIndex);
         dataTable.rows().remove(rowIndex - 1);
     });
 });
