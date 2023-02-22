@@ -13,9 +13,8 @@ window.addEventListener("DOMContentLoaded", async () => {
         for(let [url, detail] of Object.entries(problem)) {
             const html =
                 `<tr>
-                    <td class="text-center align-middle">${contest}</td>
-                    <td class="pl-4 align-middle"><a href="${url}">${detail["title"]}</a></td>
-                    <td class="text-center align-middle">${detail["savedAt"]}</td>
+                    <td class="pl-3 align-middle" data-contest="${contest}"><a href="${url}">${detail["title"]}</a></td>
+                    <td class="pl-3 align-middle">${detail["savedAt"]}</td>
                     <td class="text-center align-middle">${removeBtn}</td>
                 </tr>`
 
@@ -36,7 +35,7 @@ window.addEventListener("DOMContentLoaded", async () => {
             bottom: "{pager}"
         },
         columns: [
-            {select: 3, sortable: false}
+            {select: 2, sortable: false}
         ]
     });
 });
@@ -49,8 +48,8 @@ tbl.addEventListener("click", async (event) => {
     if(!button) return;
 
     const tr = button.closest("tr");
-    const contest = tr.cells[0].textContent;
-    const url = tr.cells[1].firstElementChild.href
+    const contest = tr.cells[0].getAttribute("data-contest");
+    const url = tr.cells[0].firstElementChild.href
 
     const item = await chrome.storage.sync.get(contest);
     const problemsInContest = Object.keys(item[contest]).length;
