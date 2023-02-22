@@ -14,6 +14,7 @@ target.insertAdjacentHTML("beforeend", html);
     {contest}: {
         {url}: {
             title: {title},
+            note: {note},
             savedAt: {savedAt}
         }
     }
@@ -24,6 +25,7 @@ sabeBtn.addEventListener("click", async () => {
     const detail = getProblemDetail();
     const problem = {
         title: detail["title"],
+        note: "",
         savedAt: detail["savedAt"]
     }
 
@@ -37,6 +39,7 @@ sabeBtn.addEventListener("click", async () => {
         item[detail["contest"]][detail["url"]] = problem;
         await chrome.storage.sync.set(item);
     }
+    console.log(item);
 });
 
 
