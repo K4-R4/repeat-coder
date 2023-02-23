@@ -24,3 +24,11 @@ table {
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+
+.color-ok {
+    color: rgb(0, 128, 0);
+}
+
+.color-not-ok {
+    color: rgb(160, 160, 160);
+}
