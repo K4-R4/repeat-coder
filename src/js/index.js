@@ -82,7 +82,7 @@ async function generateTableRows() {
             </button>`;
             rows +=
                 `<tr data-contest="${contest}" data-url="${url}">
-                    <td class="ellipsis pl-3 align-middle"><a href="${url}">${detail["title"]}</a></td>
+                    <td class="ellipsis pl-3 align-middle"><div class="d-none">${detail["title"]}</div><a href="${url}">${detail["title"]}</a></td>
                     <td class="note ellipsis pl-3" contenteditable="true">${detail["note"]}</td>
                     <td class="pl-3 ellipsis align-middle">${detail["savedAt"]}</td>
                     <td class="text-center align-middle">${deleteBtn}</td>
