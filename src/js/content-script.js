@@ -2,7 +2,7 @@
 const target = document.querySelector("#contest-nav-tabs ul");
 const btnHtml =
     `<li id="save-btn"><a href="javascript:void(0)">
-        <span class="glyphicon glyphicon-save color-not-ok" aria-hidden="true"></span>保存
+        <span class="glyphicon glyphicon-save color-not-ok" aria-hidden="true"></span>
     </a></li>`;
 target.insertAdjacentHTML("beforeend", btnHtml);
 
