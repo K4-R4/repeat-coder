@@ -5,7 +5,7 @@
 
 
 ## <div align="center">**Installation**</div>
-### <div align="center">**[Install it from the Chrome Web Store](https://chrome.google.com/webstore/detail/atcoder-bookmarks/kiaidplgaggiackabggkpopkmdiljkij/related?hl=ja&authuser=1)**</div>
+#### <div align="center">**[Install it from the Chrome Web Store](https://chrome.google.com/webstore/detail/atcoder-bookmarks/kiaidplgaggiackabggkpopkmdiljkij/related?hl=ja&authuser=1)**</div>
 
 ## <div align="center">**Demo**</div>
 <div align="center">
