@@ -15,8 +15,16 @@
                 "./src/css/style.css"
             ],
             "js": [
-                "./src/js/content-script.js"
+                "./src/js/loader.js"
             ]
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "/src/js/*"
+            ],
+            "matches": ["<all_urls>"]
         }
     ],
     "permissions": [
