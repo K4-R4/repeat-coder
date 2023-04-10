@@ -1,6 +1,6 @@
-import { deleteProblem } from "./list-operation.js";
+import { deleteProblem } from "./list_operation.js";
 import { getAttributeFromNode, setAttributeToNode } from "./util.js";
-import { generateTableRows } from "./table-generator.js";
+import { generateTableRows } from "./table_generator.js";
 
 window.addEventListener("DOMContentLoaded", async () => {
     // chrome storageからデータを取得してテーブルの各行を生成

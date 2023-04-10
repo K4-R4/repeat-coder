@@ -20,8 +20,7 @@ function getFormattedTime() {
 }
 
 // ページの問題がすでに保存されているか否かを判定
-async function isSaved() {
-    const [contest, url, _] = getProblemDetail();
+async function isSaved(contest, url) {
     const item = await chrome.storage.sync.get(contest);
 
     return item[contest] && item[contest][url];

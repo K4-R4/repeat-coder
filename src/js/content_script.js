@@ -1,6 +1,6 @@
-import { getProblemDetail, isSaved } from "./web-reader.js";
-import { saveProblem } from "./list-operation.js";
-import { toggleButtonColor } from "./button-style.js";
+import { getProblemDetail } from "./web_reader.js";
+import { saveProblem } from "./list_operation.js";
+import { toggleButtonColor, initializeSaveButton } from "./button_style.js";
 
 export function main() {
     //  問題ページにその問題を記録するための保存ボタンを追加する
@@ -12,7 +12,8 @@ export function main() {
     target.insertAdjacentHTML("beforeend", btnHtml);
 
     const saveBtn = document.getElementById("save-btn");
-    initializeSaveButton();
+    let [contest, url] = getProblemDetail();
+    initializeSaveButton(contest, url);
     // 保存ボタンが押されたときに保存する
     saveBtn.addEventListener("click", async () => {
         const [contest, url, problem] = getProblemDetail();
@@ -20,9 +21,4 @@ export function main() {
         toggleButtonColor();
     });
 
-    async function initializeSaveButton() {
-        if (await isSaved()) {
-            toggleButtonColor();
-        }
-    }
 }
