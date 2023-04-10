@@ -1,3 +1,5 @@
+import { isSaved } from "./web_reader.js";
+
 // 保存ボタンのアイコンと色を、問題が保存済みか否かによって切り替える
 function toggleButtonColor() {
     const saveBtn = document.getElementById("save-btn");
@@ -8,4 +10,10 @@ function toggleButtonColor() {
     icon.classList.toggle("color-not-ok");
 }
 
-export { toggleButtonColor };
+async function initializeSaveButton(contest, url) {
+    if (await isSaved(contest, url)) {
+        toggleButtonColor();
+    }
+}
+
+export { toggleButtonColor, initializeSaveButton };
